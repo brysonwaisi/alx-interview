@@ -4,6 +4,9 @@
 def pascal_triangle(n):
   res = [[1]]
 
+  if type(n) is not int or n<= 0:
+    return res
+    
   for i in range(n - 1):
     temp = [0] + res[-1] + [0]
     row = []

@@ -14,7 +14,7 @@ def canUnlockAll(boxes):
     canUnlockAll = False
     keys = {0: True}
     n_boxes = len(boxes)
-    while(True):
+    while (True):
 
         n_keys = len(keys)
 
@@ -25,11 +25,10 @@ def canUnlockAll(boxes):
                         keys[j] = True
                     boxes[i] = None
 
-        if not(len(keys) > n_keys):
+        if not (len(keys) > n_keys):
             break
 
     if n_keys == len(boxes):
         canUnlockAll = True
 
     return canUnlockAll
-  

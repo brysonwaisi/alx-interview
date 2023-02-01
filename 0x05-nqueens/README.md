@@ -1,5 +1,6 @@
 # N-Queens Problem
 
-This is a backtracking problem
+This is a backtracking problem.
 
-The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
+The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard.
+

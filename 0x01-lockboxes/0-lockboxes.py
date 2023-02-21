@@ -13,12 +13,14 @@ def canUnlockAll(boxes):
     """
     if not boxes:
         return False
-    
+
     n = len(boxes)
     unlocked = [False] * n
     unlocked[0] = True
-    
+
     queue = [0]
+    visited = set(queue)
+
     while queue:
         box = queue.pop(0)
         for key in boxes[box]:
@@ -27,5 +29,9 @@ def canUnlockAll(boxes):
             if not unlocked[key]:
                 unlocked[key] = True
                 queue.append(key)
-    
-    return all(unlocked)
+                visited.add(key)
+
+                if len(visited) == n:
+                    return True
+
+    return len(visited) == n

@@ -13,32 +13,24 @@ def solve_nqueens(n):
         print("N must be at least 4")
         sys.exit(1)
 
-    # Initialize the board
-    board = [-1] * n
-
-    # Define the helper function to check if a queen can be placed
-    # at a given row and column
-    def can_place_queen(row, col):
-        for i in range(row):
-            if board[i] == col or \
-               board[i] - i == col - row or \
-               board[i] + i == col + row:
-                return False
-        return True
+    # Initialize the arrays to keep track of occupied columns and diagonals
+    cols = [False] * n
+    diag1 = [False] * (2*n - 1)
+    diag2 = [False] * (2*n - 1)
 
     # Define the recursive function to solve the N queens problem
-    def nqueens_helper(row):
+    def nqueens_helper(row, positions):
         if row == n:
-            print(" ".join(str(i) for i in board))
+            print(" ".join(str(p[1]) for p in positions))
             return
         for col in range(n):
-            if can_place_queen(row, col):
-                board[row] = col
-                nqueens_helper(row + 1)
-                board[row] = -1
+            if not cols[col] and not diag1[row+col] and not diag2[row-col+n-1]:
+                cols[col] = diag1[row+col] = diag2[row-col+n-1] = True
+                nqueens_helper(row + 1, positions + [(row, col)])
+                cols[col] = diag1[row+col] = diag2[row-col+n-1] = False
 
     # Solve the problem
-    nqueens_helper(0)
+    nqueens_helper(0, [])
 
 
 if __name__ == '__main__':

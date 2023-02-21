@@ -19,7 +19,7 @@ Note that the function includes a check for keys that have a number greater than
 
 The time complexity of this implementation is `O(n + k)`, where `n` is the number of boxes and k is the total number of keys in all the boxes. The space complexity is also `O(n)`, since the function uses an unlocked list to keep track of the unlocked boxes.
 
-We further optimized it by incorporating the follwoing constraints:
+We further optimized it by incorporating the following constraints:
 
 1. Early exit: If we encounter a box that cannot be opened, we can stop the BFS and return False. This can save time in cases where there are many boxes that cannot be opened.
 

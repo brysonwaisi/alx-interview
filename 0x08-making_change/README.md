@@ -1,0 +1,3 @@
+In this implementation, we first sort the `coins` list in decreasing order using `sort(reverse=True)`. Then, we iterate through the coins and check if the current coin value is less than or equal to the remaining total amount. If so, we add the maximum number of coins with that value to the `coin_count ` and update the remaining total amount. Finally, if the remaining total amount becomes zero, we return the `coin_count`. Otherwise, we continue to the next coin value.
+
+The time complexity of this implementation is `O(n log n)` due to the sorting step, but in practice, the sorting step has negligible impact on the performance for small inputs, and the algorithm is effectively `O(n)`.

@@ -54,3 +54,7 @@ def isWinner(x, nums):
             winner = player
 
     return winner
+
+'''
+To determine the winner of the game, we can use the Sieve of Eratosthenes to generate a list of prime numbers up to n. Then, we can simulate the game by keeping track of the remaining numbers in the set and the player whose turn it is. On each turn, the player chooses the smallest remaining prime number and removes it and its multiples from the set. If there are no more prime numbers in the set, the other player wins.
+'''
